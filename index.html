@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registratsiya Sahifasi</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 p-10">
+
+    <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+        <h2 class="text-2xl font-semibold mb-4">Registratsiya</h2>
+    </div>
+
+    <script>
+        // Foydalanuvchidan ma'lumotlarni olish
+        let username = prompt("Ismingizni kiriting:");
+        let email = prompt("Email manzilingizni kiriting:");
+        let password = prompt("Parolingizni kiriting:");
+
+        // Paroldagi bo'sh joylarni olib tashlash
+        password = password.trim();
+
+        // Ismni tekshirish
+        if (username.length < 3) {
+            alert("Ism kamida 3 ta belgidan iborat bo'lishi kerak!");
+        }
+        // Emailni tekshirish
+        else if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+            alert("Email manzili noto'g'ri formatda!");
+        }
+        // Parolni tekshirish
+        else if (password.length < 6) {
+            alert("Parol kamida 6 ta belgidan iborat bo'lishi kerak!");
+        }
+        // Barcha ma'lumotlar to'g'ri bo'lsa
+        else {
+            let result = `Ism: ${username.toUpperCase()}, Email: ${email.toLowerCase()}, Parol uzunligi: ${password.length}`;
+            alert(result);
+        }
+    </script>
+
+</body>
+</html>
